@@ -9,7 +9,7 @@ export const clearSearchInput = () => {
 
 // Clears previous search results from the view
 export const clearResults = () => {
-  elements.searchResultList.innerHTML = "";
+  elements.searchResultsList.innerHTML = "";
 };
 
 // Truncates recipe titles that are longer than limit
@@ -51,7 +51,7 @@ const renderRecipe = recipe => {
       </a>
   </li>
   `;
-  elements.searchResultList.insertAdjacentHTML("beforeend", resultMarkup);
+  elements.searchResultsList.insertAdjacentHTML("beforeend", resultMarkup);
 };
 
 // Loops through each recipe and renders it to the view

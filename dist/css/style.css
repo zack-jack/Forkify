@@ -183,16 +183,16 @@ body {
   color: #968b87;
 }
 
-.loader {
+.spinner {
   margin: 5rem auto;
   text-align: center;
 }
-.loader svg {
+.spinner svg {
   height: 5.5rem;
   width: 5.5rem;
   fill: #f59a83;
   transform-origin: 44% 50%;
-  animation: rotate 1.5s infinite linear;
+  animation: rotate 1.4s infinite linear;
 }
 
 @keyframes rotate {
