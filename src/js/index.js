@@ -32,7 +32,17 @@ const controlSearch = async () => {
   }
 };
 
+// Search bar submit event listener
 elements.searchForm.addEventListener("submit", e => {
   e.preventDefault();
   controlSearch();
+});
+
+elements.searchResultsPages.addEventListener("click", e => {
+  const buttonTarget = e.target.closest(".btn-inline");
+  if (buttonTarget) {
+    const goToPage = parseInt(buttonTarget.dataset.gotopage, 10);
+    searchView.clearResults();
+    searchView.renderResults(state.search.result, goToPage);
+  }
 });
