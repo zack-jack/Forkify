@@ -17,7 +17,6 @@ export default class Recipe {
       this.url = result.data.recipe.source_url;
       this.ingredients = result.data.recipe.ingredients;
     } catch (error) {
-      console.log(error);
       alert("Something went wrong :(");
     }
   }
@@ -26,7 +25,7 @@ export default class Recipe {
     // Assumes 15 minutes for every 3 ingredients
     const numOfIngredients = this.ingredients.length;
     const period = Math.ceil(numOfIngredients / 3);
-    this.time = periods * 15;
+    this.time = period * 15;
   }
 
   calcServings() {
