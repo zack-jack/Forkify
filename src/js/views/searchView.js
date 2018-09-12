@@ -13,6 +13,17 @@ export const clearResults = () => {
   elements.searchResultsPages.innerHTML = "";
 };
 
+export const highlightSelected = id => {
+  const resultsArr = Array.from(document.querySelectorAll(".results__link"));
+  resultsArr.forEach(element => {
+    element.classList.remove("results__link--active");
+  });
+
+  document
+    .querySelector(`a[href="#${id}"]`)
+    .classList.add("results__link--active");
+};
+
 // Truncates recipe titles that are longer than limit
 /** Example
  * "Pasta with tomato and spinach"
