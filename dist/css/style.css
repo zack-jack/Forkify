@@ -35,7 +35,7 @@ body {
 }
 
 .container {
-  max-width: 120rem;
+  max-width: 140rem;
   margin: 4vh auto;
   background-color: #fff;
   border-radius: 6px;
@@ -409,7 +409,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, 20%);
+  transform: translate(-50%, 20%) skewY(-2deg);
   color: #fff;
   font-weight: 700;
   font-size: 2.75rem;
@@ -546,7 +546,7 @@ body {
 .shopping__list {
   list-style: none;
   max-height: 77rem;
-  overflow: scroll;
+  /*overflow: scroll;*/
 }
 .shopping__item {
   display: flex;
@@ -571,7 +571,7 @@ body {
   font-size: 1.2rem;
   text-align: center;
   border: none;
-  width: 3.7rem;
+  width: 4rem;
   border-radius: 3px;
 }
 .shopping__count input:focus {
@@ -580,6 +580,7 @@ body {
 }
 .shopping__count p {
   font-size: 1.2rem;
+  text-align: center;
 }
 .shopping__description {
   flex: 1;
