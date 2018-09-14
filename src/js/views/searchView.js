@@ -20,7 +20,7 @@ export const highlightSelected = id => {
   });
 
   document
-    .querySelector(`a[href="#${id}"]`)
+    .querySelector(`.results__link[href="#${id}"]`)
     .classList.add("results__link--active");
 };
 
@@ -33,7 +33,7 @@ export const highlightSelected = id => {
  * accumulator next is 15: accumulator + current.length = 18 / newTitle = ['Pasta', 'with', 'tomato']
  * accumulator next is 18: accumulator + current.length = 24 / newTitle = ['Pasta', 'with', 'tomato']
  */
-const truncRecipeTitle = (title, charLimit = 17) => {
+export const truncRecipeTitle = (title, charLimit = 17) => {
   const newTitle = [];
   if (title.length > charLimit) {
     title.split(" ").reduce((accumulator, current) => {
