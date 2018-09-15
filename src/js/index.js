@@ -15,7 +15,6 @@ import { elements, renderLoadingSpinner, clearLoading } from "./views/base";
  *  - liked recipes
  */
 const state = {};
-window.state = state;
 
 /**
  *  SEARCH CONTROLLER
@@ -23,7 +22,6 @@ window.state = state;
 const controlSearch = async () => {
   // 1) Get query from the view
   const query = searchView.getInput();
-  console.log(query);
   if (query) {
     // 2) New search object and add it to state
     state.search = new Search(query);
@@ -67,7 +65,6 @@ elements.searchResultsPages.addEventListener("click", e => {
 const controlRecipe = async () => {
   // Get hash ID from url and remove "#"
   const id = window.location.hash.replace("#", "");
-  console.log(id);
 
   if (id) {
     // Prepare the UI for changes
@@ -83,7 +80,6 @@ const controlRecipe = async () => {
     try {
       // Get recipe data and parse ingredients
       await state.recipe.getRecipe();
-      console.log(state.recipe.ingredients);
       state.recipe.parseIngredients();
 
       // Calculate servings and time
@@ -127,7 +123,6 @@ const controlList = () => {
 //Delete and update list item events
 elements.shopping.addEventListener("click", event => {
   const id = event.target.closest(".shopping__item").dataset.itemid;
-  console.log(id);
   if (event.target.matches(".shopping__delete, .shopping__delete *")) {
     // Delete from state
     state.list.deleteItem(id);
@@ -217,5 +212,3 @@ elements.recipe.addEventListener("click", event => {
     controlLike();
   }
 });
-
-window.list = new List();
